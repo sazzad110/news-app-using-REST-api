@@ -12,7 +12,7 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("Contact Us"),
+        child: Text("ContactUs"),
       ),
     );
   }
