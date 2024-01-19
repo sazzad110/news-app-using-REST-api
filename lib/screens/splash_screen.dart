@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
           child: LinearProgressIndicator(
-        color: Colors.orange,
+        color: Colors.black,
         minHeight: 15,
       )),
     );
