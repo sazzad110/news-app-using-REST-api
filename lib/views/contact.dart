@@ -13,7 +13,7 @@ class _ContactState extends State<Contact> {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        color:  Color(0xff03061B),
+        color: Color(0xff03061B),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,11 +23,17 @@ class _ContactState extends State<Contact> {
             ),
             Text(
               "Sazzad Hasan",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             Text(
               "Flutter Developer",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             // Red divider
             SizedBox(
@@ -63,17 +69,72 @@ class _ContactState extends State<Contact> {
             SizedBox(
               height: 15,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.facebook,
-                  size: 50,
+            ElevatedButton(
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        height: 300,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: (BorderRadius.circular(50)),
+                        ),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading: Icon(Icons.mail, size: 30),
+                              trailing: Text("Hired Via Mail",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20)),
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                Icons.facebook,
+                                size: 30,
+                              ),
+                              trailing: Text(
+                                "Hired Via Facebook",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                Icons.message,
+                                size: 30,
+                              ),
+                              trailing: Text("Hired Via SMS",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20)),
+                            ),
+                          ],
+                        ),
+                      );
+                    });
+              },
+              child: Text(
+                "Hire Developer",
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red, // Background color
+                padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 12), // Adjust padding for better spacing
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(10), // Add rounded corners
                 ),
-                Icon(Icons.facebook, size: 50),
-                Icon(Icons.facebook, size: 50),
-              ],
-            )
+                elevation: 4, // Add elevation for a subtle shadow
+              ),
+            ),
           ],
         ),
       ),

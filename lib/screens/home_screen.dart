@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // Store all news,top news and contact in a list.
-  List pages = [AllNews(), TopNews(), Contact()];
+  List pages = [Contact()];
   int _selectedIndex = 0;
 
   @override
