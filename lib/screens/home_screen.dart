@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/views/all_news.dart';
 import 'package:news_app/views/contact.dart';
+import 'package:news_app/views/details_news.dart';
 import 'package:news_app/views/top_news.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // Store all news,top news and contact in a list.
-  List pages = [Contact()];
+  List pages = [AllNews(),TopNews(),Contact()];
   int _selectedIndex = 0;
 
   @override
